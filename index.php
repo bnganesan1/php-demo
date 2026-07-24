@@ -1,4 +1,6 @@
 <?php
-echo "<h1>Hello OpenShift! Ganesan</h1>"
+echo "<h1>Hello OpenShift!</h1>";
+
+echo phpinfo();
 
 ?>

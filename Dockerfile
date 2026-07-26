@@ -6,6 +6,22 @@ libpq-dev \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
+# SQL Server prerequisites
+RUN apt-get update && apt-get install -y \
+    curl gnupg2 unixodbc-dev apt-transport-https
+
+# Microsoft repository
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl https://packages.microsoft.com/config/debian/12/prod.list \
+    > /etc/apt/sources.list.d/mssql-release.list
+
+RUN apt-get update && ACCEPT_EULA=Y apt-get install -y msodbcsql18
+
+# SQLSRV extensions
+RUN pecl install sqlsrv pdo_sqlsrv && \
+    docker-php-ext-enable sqlsrv pdo_sqlsrv
+
+
 
 COPY index.php /var/www/html/
 

@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  APP_ NAME: sample
+  APP_NAME: sample
   ENVIRONMENT: PREPROD
   TEMP_PATH: /var/www

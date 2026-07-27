@@ -1,7 +1,7 @@
 apiVersion: v1 
-kind: Configap
+kind: ConfigMap
 metadata :
-  name: orion- config-new
+  name: sample-config-new
 data:
   APP_ NAME: sample
   ENVIRONMENT: PREPROD

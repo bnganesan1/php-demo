@@ -1,0 +1,8 @@
+apiVersion: v1 
+kind: Configap
+metadata :
+  name: orion- config-new
+data:
+  APP_ NAME: sample
+  ENVIRONMENT: PREPROD
+  TEMP_PATH: /var/www
